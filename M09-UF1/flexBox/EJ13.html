@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background: rgb(182, 255, 108);
+            color: rgb(85, 85, 85);
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            background: rgb(116, 163, 69);
+            padding-left: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: underline;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 3px;
+            font-size: 11px;
+        }
+
+        #ViajesOne {
+            width: 60px;
+            height: 60px;
+        }
+
+        #BajoHeader {
+            width: 100%;
+        }
+
+        .amarillo {
+            background-color: rgb(255, 252, 183);
+            border: 5px solid rgb(178, 149, 34);
+        }
+
+        .verde {
+            background-color: rgb(211, 255, 171);
+            border: 5px solid rgb(107, 154, 59);
+        }
+
+        .azul {
+            background-color: rgb(184, 227, 255);
+            border: 5px solid rgb(12, 51, 109);
+        }
+
+        .radios {
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .miniImagen {
+            width: 70px;
+            height: 70px;
+        }
+
+        .articulo {
+            padding: 15px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 4vw;
+        }
+
+        footer {
+            background-color: rgb(204, 204, 204);
+            border-top: 8px solid rgb(85, 85, 85);
+            border-bottom: 8px solid rgb(85, 85, 85);
+            padding: 10px;
+        }
+
+        .miniEstrella {
+            width: 20px;
+            height: 20px;
+        }
+
+        .letraGris {
+            color: rgb(91, 91, 91);
+        }
+    </style>
+</head>
+
+<body>
+    <header> <img id="ViajesOne" src="../../Imagenes/ViajesOne.png"> ViajesOne.com</header>
+    <nav>
+        <a href="#">Inicio</a> <a>|</a>
+        <a href="#">Cassas Rurales</a> <a>|</a>
+        <a href="#">Camping</a> <a>|</a>
+        <a href="#">Hoteles</a> <a>|</a>
+        <a href="#">Opiniones!!</a>
+    </nav>
+    <img id="BajoHeader" src="../../Imagenes/BajoHeader.png">
+
+    <section>
+        <article class="articulo amarillo radios">
+            <img class="miniImagen" src="../../Imagenes/casa.png">
+            <h1>CASAS RURALES</h1>
+            <p>
+                Finca <strong>Ecológica</strong> de 15 hectáreas, cerrada con muros de piedra. Te ofrecemos alojarte en
+                un tnsque de castaños y alcorntllues centenarios, donde
+                pasear en privado con Ia familia y los amigos, en pleno Parque Natural de Ia Sierra de Aracena y Picos
+                de Aroche. 12 plazas en 5 dormit, 4 baños
+            </p>
+        </article>
+        <article class="articulo verde radios">
+            <img class="miniImagen" src="../../Imagenes/camping.png"/>
+            <h1>CAMPING</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nesciunt laboriosam dicta placeat
+                cum, asperiores ipsum quisquam nemo dolorem a officiis culpa porro adipisci ex earum reiciendis maxime
+                repellat! Aut.
+            </p>
+        </article>
+        <article class="articulo azul radios">
+            <img class="miniImagen" src="../../Imagenes/edificio.png">
+            <h1>HOTELES</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nesciunt laboriosam dicta placeat
+                cum, asperiores ipsum quisquam nemo dolorem a officiis culpa porro adipisci ex earum reiciendis maxime
+                repellat! Aut.
+            </p>
+        </article>
+    </section>
+    <footer>
+        <h4 class="letraGris">OPINIONES DE CLIENTES</h4>
+        <div>
+            <img class="miniImagen" src="../../Imagenes/avatar.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <p class="letraGris">Siempre dan una respuesta, una solución, sin tiemp de espera, y con un trato amigable.
+                Excelente
+                servicio.</p>
+        </div>
+        <div>
+            <img class="miniImagen" src="../../Imagenes/mujer.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <img class="miniEstrella" src="../../Imagenes/estrella.png">
+            <p class="letraGris">Estoy muy satisfecha con sus servicios y alojamientos ofrecidos.</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

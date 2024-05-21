@@ -1,0 +1,108 @@
+.lateral {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 237, 220);
+    width: 15%;
+    height: auto;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.lateral a {
+    background-color: rgb(223, 223, 255);
+    margin: 2px;
+    border-radius: 20px;
+    padding: 3px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.Container {
+    display: flex;
+    background-color: antiquewhite;
+    width: 60%;
+    height: 60%;
+    margin-top: 10%;
+    align-content: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.preg {
+    display: flex;
+    align-content: center;
+    justify-content: start;
+}
+
+.Preg ul li {
+    list-style: none;
+    background-color: rgb(223, 223, 255);
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    align-content: center;
+    justify-content: start;
+    border: 2px solid black;
+    width: auto;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+.verde {
+    color: green;
+}
+
+.rojo {
+    color: red;
+}
+
+.azul {
+    color: blue;
+}
+
+.amarillo {
+    color: yellow;
+}
+
+.marron {
+    color: brown;
+}
+
+.Preg li {
+    list-style: none;
+    background-color: rgb(223, 223, 255);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 3px;
+    display: flex;
+    align-content: center;
+    justify-content: start;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+.titulo {
+    display: flex;
+    align-content: center;
+    justify-content: start;
+}

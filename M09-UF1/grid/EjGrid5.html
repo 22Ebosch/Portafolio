@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjGrid1</title>
+    <style>
+        body{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .divGrande {
+            display: grid;
+            width: 600px;
+            height: 300px;
+            border: 10px solid black;
+            grid-template: 10% 1fr 10%/1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .divGrande div {
+            border: 5px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 20px;
+        }
+
+        .cel1 {
+            grid-column: 1 / 2;
+            font-size: 1px;
+        }
+
+        .cel2 {
+            grid-column: 2 / 4;
+            grid-row: 1 / 10;
+        }
+
+        .cel3 {
+            grid-column: 4 / 7;
+        }
+
+        .cel4 {
+            grid-column: 1 /2;
+            grid-row: 2 / 10;
+        }
+
+        .cel5 {
+            grid-column: 4 / 7;
+            grid-row: 2 / 9;
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            padding-right: 10px;
+        }
+
+        .cel5 p {
+            font-size: 10px;
+            padding-left: 30%;
+            padding-bottom: 20px;
+        }
+        .cel5 h1 {
+            font-size: 40px;
+            margin: 0px;
+        }
+
+        .cel6 {
+            grid-column: 4 / 5;
+
+        }
+
+        .cel7 {
+            grid-column: 5 / 6;
+        }
+
+        .cel8 {
+            grid-column: 6 / 7;
+        }
+
+        .red {
+            background-color: rgb(185, 62, 55);
+        }
+
+        .yellow {
+            background-color: rgb(209, 172, 57);
+        }
+
+        .blue {
+            background-color: rgb(41, 82, 186);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divGrande">
+        <div class="cel1 red">celda 1</div>
+        <div class="cel2 red">Celda 2</div>
+        <div class="cel3 blue">Celda 3</div>
+        <div class="cel4 yellow">Celda 4</div>
+        <div class="cel5">
+            <h2>Piet Mondrian</h2>
+            <p>
+                L'art de Mondrian era altament utàpic i estava preocupat per la
+                recerca de valors i estética universals. EI 1914 va proclamar. "L'art
+                és superior a la realitat i no té cap relació directa amb la realitat.
+                Per acostar-se a l'espiritual en l'art, s'utilitzarà la realitat el menys
+                possible, perqué la realitat s'oposa a l'espiritual. Ens trobem en la
+                preséncia d'un art abstracte. L'art hauria destar per sobre de la
+                realitat, en cas contrari no tindria cap valor per a l'home". El seu
+                art. perô, sempre va romandre arrelat a Ia natura.
+            </p>
+        </div>
+        <div class="cel6">Celda 6</div>
+        <div class="cel7 blue">Celda 7</div>
+        <div class="cel8 yellow">Celda 8</div>
+    </div>
+</body>
+
+</html>

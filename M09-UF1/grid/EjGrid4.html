@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjGrid1</title>
+    <style>
+        .divGrande {
+            display: grid;
+            width: 500px;
+            height: 200px;
+        }
+
+        .divGrande div {
+            background-color: rgb(106, 124, 136);
+            margin: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 15px;
+        }
+        .cel1{
+            grid-column: 1 / 6;
+        }
+
+        .cel2{
+            grid-column: 6 / 12;
+        }
+
+        .cel3{
+            grid-column: 1 / 4;
+        }
+
+        .cel4{
+            grid-column: 4 / 12;
+        }
+
+        .cel5{
+            grid-column: 1 / 12;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divGrande">
+        <div class="cel1">Celda 1</div>
+        <div class="cel2">Celda 2</div>
+        <div class="cel3">Celda 3</div>
+        <div class="cel4">Celda 4</div>
+        <div class="cel5">Celda 5</div>
+    </div>
+</body>
+
+</html>

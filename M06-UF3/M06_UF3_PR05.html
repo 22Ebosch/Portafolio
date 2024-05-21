@@ -1,0 +1,89 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ejercicio 15 - Informaci�n sobre eventos</title>
+
+	<style type="text/css">
+		body {
+			font-family: arial, helvetica;
+		}
+
+		#info {
+			width: 160px;
+			border: thin solid silver;
+			padding: .5em;
+			position: fixed;
+		}
+
+		#info h1 {
+			margin: 0;
+		}
+
+		.amarillo{
+			background-color: #FFFFCC;
+		}
+
+		.azul{
+			background-color: #CCE6FF;
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+	<div id="info"></div>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+<script type="text/javascript">
+	let mensaje = [];
+	function muestraRaton(elEvento) {
+		var evento = elEvento || window.event;
+		var coordenadaX = evento.clientX;
+		var coordenadaY = evento.clientY;
+		var coordenadaX2 = evento.screenX;
+		var coordenadaY2 = evento.screenY;
+
+		mensaje = ['Raton',"Nav: " + "X: " + coordenadaX + ', ' + "Y: " + coordenadaY, "Pant: " + "X: " + coordenadaX2 + ', ' + "Y: " + coordenadaY2 ];
+		document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
+		for (var i = 1; i < mensaje.length; i++) {
+			document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
+			document.getElementById("info").classList.remove('amarillo')
+			document.getElementById("info").classList.remove('azul')
+		}
+	}
+
+	function muestraTecla(elEvento) {
+		var evento = window.event || elEvento;
+		let tecla = evento.key;
+		let codigo = elEvento.keyCode;
+		
+		mensaje = ['Tecla', "Tecla: " + tecla, "ASCII: " + codigo]
+		document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
+		for (var i = 1; i < mensaje.length; i++) {
+			document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
+			document.getElementById("info").classList.remove('amarillo')
+			document.getElementById("info").classList.add('azul')
+		}
+	};
+
+function clickRaton(){
+	document.getElementById("info").classList.remove('azul')
+	document.getElementById("info").classList.add('amarillo')
+}
+
+
+	document.addEventListener('mousemove', muestraRaton)
+	document.addEventListener('keypress', muestraTecla )
+	document.addEventListener('mousedown', clickRaton)
+</script>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tauler Kanban</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: row;
+        }
+
+        .tableroKanban {
+            display: flex;
+            max-width: 800px;
+        }
+
+        .columna {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .columna h2 {
+            margin-bottom: 10px;
+            white-space: nowrap;
+        }
+
+
+        .tarea {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .over {
+            border: 3px dotted #666;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tableroKanban">
+        <div class="columna" id="todo">
+            <h2>Per fer</h2>
+            <div class="tarea" id="t1" draggable="true">Tasca 1</div>
+            <div class="tarea" id="t2" draggable="true">Tasca 2</div>
+        </div>
+        <div class="columna" id="inProgress">
+            <h2>En progrés</h2>
+            <div class="tarea" id="t3" draggable="true">Tasca 3</div>
+        </div>
+        <div class="columna" id="done">
+            <h2>Fet</h2>
+            <div class="tarea" id="t4" draggable="true">Tasca 4</div>
+            <div class="tarea" id="t5" draggable="true">Tasca 5</div>
+        </div>
+    </div>
+
+    <script>
+        //COJE LA INFORMACION DEL ELEMENTO QUE SE MEUEVE(SEA LO QUE SEA)
+        function dragStart(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let tableroKanban = document.querySelector('.tableroKanban');
+
+            tableroKanban.addEventListener('dragstart', dragStart);
+            tableroKanban.addEventListener('dragover', permitirDrop);
+            tableroKanban.addEventListener('drop', drop);
+            tableroKanban.addEventListener('dragenter', handleDragEnter);
+            tableroKanban.addEventListener('dragleave', handleDragLeave);
+
+            //COJE LA INFORMACION DEL ELEMENTO QUE SE MEUEVE(SOLO SI TIENE LA CLASE TAREA)
+            function dragStart(event) {
+                const tarea = event.target.closest('.tarea');
+                if (tarea) {
+                    event.dataTransfer.setData("text", tarea.id);
+                }
+            }
+
+            //PREVIENE EL COMPORTAMIENTO DE LOS NAVEGADORES Y PERMITIR EL DROP
+            function permitirDrop(event) {
+                event.preventDefault();
+            }
+
+            //SE ACTIVA AL ENTRAR EL ELEMENTO A OTRO QUE CONTIENE DRAGENTER
+            function handleDragEnter(event) {
+                if (event.target.classList.contains('tarea')) {
+                    event.target.classList.add('over');
+                }
+                if (event.target.classList.contains('columna')) {
+                    event.target.classList.add('over');
+                }
+
+            }
+            //SE ACTIVA AL SACAR EL ELEMENTO DE OTRO QUE CONTIENE DRAGENTER
+            function handleDragLeave(event) {
+                if (event.target.classList.contains('tarea')) {
+                    event.target.classList.remove('over');
+                }
+                if (event.target.classList.contains('columna')) {
+                    event.target.classList.remove('over');
+                }
+            }
+        });
+
+        //SE UTILIZA AL SOLTAR EL ELEMNTO EN UN AREA CON LA FUNCION DROP
+        function drop(event) {
+            event.preventDefault();
+            //GUARDA INFO DEL ELEMENTO
+            var data = event.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+
+            //BUSCA EL ELEMENTO DE LOS 3 MAS CERCANO
+            var targetColumn = event.target.closest('#todo, #inProgress, #done');
+            // BUSCA LA TAREA MAS CERCANA (DESTINO)
+            var targetElement = event.target.closest('.tarea');
+
+            //SI ENCUENTRA COLUMNA
+            if (targetColumn) {
+                //SI ENCUENTRA TAREA
+                if (targetElement) {
+                    //INSERTA EL ELEMNETO ANTES DEL SIGUIENTE HIJO
+                    targetElement.parentNode.insertBefore(draggedElement, targetElement.nextSibling);
+                } else {
+                    // SINO AL FINAL DE LA COLUMNA
+                    targetColumn.appendChild(draggedElement);
+                }
+                targetColumn.classList.remove('over');
+                if (targetElement) {
+                    targetElement.classList.remove('over');
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

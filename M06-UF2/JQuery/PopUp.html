@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <script src="jquery.popUp.js"></script>
+    <style>
+        body {
+            width: 700px;
+        }
+
+        .naranja {
+            color: rgb(233, 168, 67);
+        }
+
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            color: rgb(3, 69, 135)
+        }
+
+        .impulso {
+            margin-top: 1rem;
+            border-top: 2px solid rgb(233, 168, 67);
+            border-bottom: 2px solid rgb(233, 168, 67);
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .otrsim {
+            margin-top: 5px;
+            display: flex;
+        }
+
+        .otras {
+            width: auto;
+        }
+
+        .dossimb {
+            display: inline;
+            position: relative;
+            left: 560px
+        }
+
+        .simbolo {
+            background-color: rgb(6, 50, 89);
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        .triangulo {
+            width: 0;
+            height: 0;
+            border-left: 0px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgb(6, 50, 89);
+            /* Ajusta el color de fondo aquí */
+            margin-left: 5px;
+        }
+
+        .lista {
+            list-style: decimal inside;
+            padding-inline-start: 0px;
+            width: 350px;
+        }
+
+        .lista li {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .lista li::before {
+            content: "- ";
+            /* Hace que el guion sea negrita */
+            /* Agrega un guion antes de cada elemento de la lista */
+        }
+
+        .lista li::marker {
+            font-weight: bold;
+            /* Hace que el número sea negrita */
+            color: black;
+        }
+
+        .fondo {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.75);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            margin: 0
+        }
+
+        .popUp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .popUp form label {
+            margin-bottom: 5px;
+            /* Espacio inferior */
+        }
+
+        .popUp form input[type="text"],
+        .popUp form input[type="email"],
+        .popUp form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .popUp form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popUp form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Felipe VI condecoró al gerente de la ciudad ‘española’ de Estados Unidos que
+            visitó en 2015
+        </h1>
+    </header>
+    <article>
+        <div>
+            <strong>Se la entregó Cándido Creis, cónsul en Miami y ex jefe de Protocolo de la
+                Casa Real, al “City Manager” de San Agustín (Florida)</strong>
+        </div>
+        <p>El viaje de los reyes a Estados Unidos en septiembre del año pasado culminó
+            con una visita a San Agustín, la ciudad del Estado de Florida fundada hace 450
+            años por los conquistadores españoles. Uno de los organizadores de la visita, por
+            parte de las autoridades de San Agustín, ha sido ahora condecorado por el rey y el
+            ministro de Asuntos Exteriores.
+        </p>
+    </article>
+    <hr>
+    <div class="impulso naranja">
+        Con el impulso de la Embajada de Colombia
+    </div>
+    <div class="otrsim">
+        <div class="otras naranja">Otras Casas Reales</div>
+        <div class="dossimb">
+            <div class="simbolo">0</div>
+            <div class="triangulo"></div>
+        </div>
+
+    </div>
+    <header>
+        <h1>
+            La princesa Tatiana de Grecia debatirá en Madrid sobre la
+            importancia social de la mujer
+        </h1>
+    </header>
+    <article>
+        <div>
+            <strong>
+                La esposa del heredero Nicolás intervendrá en el foro
+                “Women Working for the World” con otras ponentes, como la alcaldesa
+                Manuela Carmena
+            </strong>
+        </div>
+        <p>
+            Madrid acogerá próximamente una edición del foro internacional
+            “Women Working for the World”, una iniciativa para estudiar e impulsar
+            el papel social de la mujer y que surgió en Colombia hace unos años.
+            Entre las conferenciantes estará Tatiana Blatnik, princesa de Grecia y Dinamarca.
+        </p>
+    </article>
+    <ol class="lista naranja">
+        <li>La bisabuela de la reina Sofía ya tiene una estatua en Grecia</li>
+        <li>Felipe VI condecoró al gerente de la ciudad ‘española’ de Estados Unidos que visitó en 2015</li>
+        <li>Una comisión secreta diseña la coronación del príncipe Carlos de Inglaterra</li>
+        <li>Los reyes coincidirán con Abdalá de Jordania, Victoria de Suecia y Mary de Dinamarca en la ONU</li>
+        <li>¿El manto de Carlos III o una reliquia apócrifa?</li>
+        <li>El ex comandante de la base española en la Antártida, número dos de la Guardia Real</li>
+    </ol>
+    <script>
+        $(document).ready(function () {
+            $("body").createPopup(300, 150);
+            $("body").mostrarPopup();
+        });
+
+    </script>
+</body>
+
+</html>

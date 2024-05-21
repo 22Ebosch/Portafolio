@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia</title>
+    <style>
+        .boton {
+            width: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .volumen {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <video src="videos/SoloLeveling.mp4" width="800" controls></video>
+    <video src="videos/Konosuba.mp4" width="800" height="400" controls="true" poster="videos/konosuba.webp"></video>
+    <div>
+        <video id="video" width="800" height="400" controls="true">
+            <source src="videos/conejo1.mp4">
+            </source>
+            <source src="videos/conejo3.mov">
+            </source>
+        </video>
+        <p>El video se ha pausado: <span id="pausas">0</span> veces</p>
+    </div>
+
+    <div>
+        <video id="videoControl" src="videos/SoloLeveling.mp4" width="800"></video>
+        <div>
+            <button id="btnRetroceder">
+                <img class="boton" src="iconos/fast-backward.png" alt="">
+            </button>
+            <button id="btnPlay">
+                <img class="boton" src="iconos/play.png" alt="">
+            </button>
+            <button id="btnAvanzar">
+                <img class="boton" src="iconos/fast-forward.png" alt="">
+            </button>
+            <img class="volumen" src="iconos/volume.png" alt="">
+            <input id="inpVolumen" type="range" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+    <script>
+        let pausas = 0;
+        const video = document.getElementById("video");
+        const contadorPausas = document.getElementById("pausas");
+
+        video.onpause = function () {
+            pausas++;
+            contadorPausas.textContent = pausas;
+        }
+
+        const video2 = document.getElementById("videoControl");
+        const pausa = document.getElementById("btnPlay");
+        const avanzar = document.getElementById("btnAvanzar");
+        const retroceder = document.getElementById("btnRetroceder");
+        const volumen = document.getElementById("inpVolumen");
+
+        pausa.addEventListener("click", function () {
+            if (video2.paused) {
+                video2.play();
+                pausa.children[0].src = "iconos/pause.png";
+            } else {
+                video2.pause();
+                pausa.children[0].src = "iconos/play.png";
+            }
+        });
+
+        avanzar.addEventListener("click", function () {
+            video2.currentTime += 5;
+        });
+
+        retroceder.addEventListener("click", function () {
+            video2.currentTime -= 5;
+        });
+
+        volumen.addEventListener("input", function () {
+            video2.volume = volumen.value;
+        });
+    </script>
+</body>
+
+</html>

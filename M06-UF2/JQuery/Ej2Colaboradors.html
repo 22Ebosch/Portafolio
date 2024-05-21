@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .colaboradores {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            justify-content: flex-start;
+        }
+
+        .colaborador {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .colaborador img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            /* ESTO ES LA MUY BUENO */
+            justify-content: flex-start;
+            margin: 10px;
+        }
+
+        .curriculum {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .curriculum h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .curriculum p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .empleado {
+            position: absolute;
+            margin-left: 150px;
+            box-shadow: 0 2px 4px rgba(6, 6, 6, 0.2);
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Colaboradors</h1>
+    </header>
+    <main>
+        <section class="colaboradores">
+            <p>Click en la imatge per ocultar/mostrar</p>
+            <div class="colaborador">
+                <img src="foto1.jpg" alt="Colaborador 1">
+                <p class="empleado">
+                    Colaborador numero 1
+                </p>
+                <div class="curriculum">
+                    <h2>Nombre Colaborador 1</h2>
+                    <p>Experiencia: Más de 5 años en la industria.</p>
+                    <p>Educación: Licenciado en Informática.</p>
+                    <p>Habilidades: Experto en desarrollo web y diseño gráfico.</p>
+                </div>
+            </div>
+            <div class="colaborador">
+                <img src="foto2.jpg" alt="Colaborador 2">
+                <p class="empleado">
+                    Colaborador numero 2
+                </p>
+                <div class="curriculum">
+                    <h2>Nombre Colaborador 2</h2>
+                    <p>Experiencia: Trabajó en varias empresas de renombre.</p>
+                    <p>Educación: Máster en Administración de Empresas.</p>
+                    <p>Habilidades: Especialista en marketing digital y gestión de proyectos.</p>
+                </div>
+            </div>
+            <div class="colaborador">
+                <img src="foto3.jpg" alt="Colaborador 3">
+                <p class="empleado">
+                    Colaborador numero 3
+                </p>
+                <div class="curriculum">
+                    <h2>Nombre Colaborador 3</h2>
+                    <p>Experiencia: Ha liderado equipos de desarrollo en startups.</p>
+                    <p>Educación: Graduado en Ingeniería Informática.</p>
+                    <p>Habilidades: Experto en desarrollo backend y arquitectura de software.</p>
+                </div>
+            </div>
+            <div class="colaborador">
+                <img src="foto4.jpg" alt="Colaborador 4">
+                <p class="empleado">
+                    Colaborador numero 4
+                </p>
+                <div class="curriculum">
+                    <h2>Nombre Colaborador 4</h2>
+                    <p>Experiencia: Ha trabajado como freelance en proyectos internacionales.</p>
+                    <p>Educación: Estudios en Diseño Gráfico y Fotografía.</p>
+                    <p>Habilidades: Destaca en diseño de interfaces y fotografía digital.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // let curriculums = document.getElementsByClassName('curriculum');
+        // let empleados = document.getElementsByClassName('empleado');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     console.log(curriculums);
+        //     for (let i = 0; i < curriculums.length; i++) {
+        //         curriculums[i].style.display = 'none'; // Ocultar cada curriculum
+        //         empleados[i].style.display = 'none';
+        //     }
+        // });
+
+        $(document).ready(function () {
+            $('.curriculum').hide();
+            $('.empleado').hide();
+
+            $('img').mouseenter(function () {
+                $(this).siblings('.empleado').fadeIn(500);
+            });
+            $('img').mouseleave(function () {
+                $(this).siblings('.empleado').fadeOut(500);
+            });
+            $('img').click(function () {
+                var curriculum = $(this).siblings('.curriculum')
+                if (curriculum.is(':visible')) {
+                    $('img').show();
+                    curriculum.hide();
+                } else {
+                    curriculum.show();
+                    $('img').hide();
+                    $(this).show();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

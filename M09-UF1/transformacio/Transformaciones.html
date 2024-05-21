@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones</title>
+    <style>
+        .red,
+        .green,
+        .blue {
+            width: 100px;
+            height: 100px;
+            transition: 2s;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .red:hover {
+            width: 300px;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .green:hover {
+            width: 300px;
+
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .green:hover~.blue {
+            transition-delay: 2s;
+            width: 300px;
+        }
+
+        .circulos {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .pink {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: pink;
+            transition: 3s;
+        }
+
+        .lightblue {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: lightblue;
+        }
+
+        .lightblue:active+.pink {
+            transform: translateX(1290px) scale(0.3);
+        }
+
+        .quad1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .quad2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .quad2:active {
+            /* animation: spin 3s infinite linear; */
+            transform: rotate(360deg);
+            transition: 3s;
+        }
+
+        .quad1:active {
+            /* animation: spin 3s infinite linear; */
+            transform: rotate(360deg);
+            transition: 3s;
+        }
+
+        .quad3:active {
+            /* animation: spin 3s infinite linear; */
+            transform: rotate(360deg);
+            transition: 3s;
+        }
+
+        .quad3 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+
+        /* @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        } */
+        .quadRojo,
+        .quadAmarillo,
+        .quadAzul,
+        .quadVerde {
+            height: 60px;
+            width: 60px;
+            position: relative;
+            transition: 3s;
+        }
+
+        .quadRojo {
+            background-color: red;
+        }
+
+        .quadAmarillo {
+            background-color: yellow;
+
+        }
+
+        .quadAzul {
+            background-color: blue;
+        }
+
+        .quadVerde {
+            background-color: green;
+
+        }
+
+        .ej5 {
+            display: flex;
+        }
+
+        .ej5:hover .quadRojo{
+            rotate: 90deg;
+            transition: 3s;
+            transform-origin: 0px 0px;
+        }
+        .ej5:hover .quadAzul{
+            rotate: -90deg;
+            transition: 3s;
+            transform-origin: 0px 60px;
+        }
+        .ej5:hover .quadAmarillo{
+            rotate: -90deg;
+            transition: 3s;
+            transform-origin: 60px 0px;
+        }
+        .ej5:hover .quadVerde{
+            rotate: 90deg;
+            transition: 3s;
+            transform-origin: 60px 60px;
+        }
+
+        .hola {
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .amarilloVerde {
+            z-index: 2;
+            position: relative;
+            right: 30px;
+        }
+
+        .rojoAzul {
+            z-index: 2;
+            position: relative;
+            left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>EJERCICO 1</h1>
+        <div class="red"></div>
+    </div>
+    <div>
+        <h1>EJERCICO 2</h1>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+    <h1>EJERCICO 3</h1>
+    <div class="circulos">
+        <div class="lightblue"></div>
+        <div class="pink"></div>
+    </div>
+    <h1>EJERCICO 4</h1>
+    <div class="quadrados">
+        <div class="quad1">
+            <div class="quad2">
+                <div class="quad3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>EJERCICO 5</h1>
+    <div class="ej5">
+        <div class="rojoAzul">
+            <div class="quadRojo"></div>
+            <div class="quadAzul"></div>
+        </div>
+        <div class="hola">Hola</div>
+        <div class="amarilloVerde">
+            <div class="quadAmarillo"></div>
+            <div class="quadVerde"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

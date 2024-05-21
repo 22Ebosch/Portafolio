@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ_Test</title>
+    <link rel="stylesheet" href="IQ_Test.css">
+</head>
+
+<body>
+    <nav class="lateral">
+        <a class="Lat_Inicio" onclick="noNone('preg_0')">Inicio</a>
+        <a class="Lat_P1" onclick="noNone('preg_1')">Pregunta 1</a>
+        <a class="Lat_P2" onclick="noNone('preg_2')">Pregunta 2</a>
+        <a class="Lat_P3" onclick="noNone('preg_3')">Pregunta 3</a>
+        <a class="Lat_P4" onclick="noNone('preg_4')">Pregunta 4</a>
+        <a class="Lat_P5" onclick="noNone('preg_5')">Pregunta 5</a>
+        <a class="Lat_P6" onclick="noNone('preg_6')">Pregunta 6</a>
+        <a class="Lat_P7" onclick="noNone('preg_7')">Pregunta 7</a>
+        <a class="Lat_P8" onclick="noNone('preg_8')">Pregunta 8</a>
+        <a class="Lat_P9" onclick="noNone('preg_9')">Pregunta 9</a>
+        <a class="Lat_P10" onclick="noNone('preg_10')">Pregunta 10</a>
+        <a class="Lat_P11" onclick="noNone('preg_11')">Pregunta 11</a>
+        <a class="Lat_Result" onclick="noNone('preg_12')">Ver</a>
+
+    </nav>
+    <div class="Container">
+        <div class="Preg" id="preg_0">
+            <h1>Test de IQ</h1>
+        </div>
+        <div class="Preg none"  id="preg_1">
+            <p>Pregunta 1: Indica con un clic cual es Roja</p>
+            <ul >
+                <li class="rojo">
+                    <input type="radio" name="Preg1" value="a" onclick="compruebaValor(1,true)">Verde
+                </li>
+                <li class="verde">
+                    <input type="radio" name="Preg1" value="b" onclick="compruebaValor(1,false)"> Amarillo
+                </li>
+                <li class="azul">
+                    <input type="radio" name="Preg1" value="c" onclick="compruebaValor(1,false)"> Rojo
+                </li>
+                <li class="amarillo">
+                    <input type="radio" name="Preg1" value="d" onclick="compruebaValor(1,false)"> Verde
+                </li>
+                <li class="marron">
+                    <input type="radio" name="Preg1" value="e" onclick="compruebaValor(1,false)"> Azul
+                </li>
+            </ul>
+        </div>
+
+        <div class="Preg none"  id="preg_2">
+            <p>Pregunta 2: 1, 3, 5, 7...</p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg2" value="a" onclick="compruebaValor(2,false)">7
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg2" value="b" onclick="compruebaValor(2,false)"> 8
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg2" value="c" onclick="compruebaValor(2,true)"> 9
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg2" value="d" onclick="compruebaValor(2,false)"> 10
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_3">
+            <p>Pregunta 3: A es a C lo que 1 es a...</p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg3" value="a" onclick="compruebaValor(3,false)">1
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg3" value="b" onclick="compruebaValor(3,false)"> 2
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg3" value="c" onclick="compruebaValor(3,true)"> 3
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg3" value="d" onclick="compruebaValor(3,false)"> 4
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_4">
+            <p>Pregunta 4:</p>
+            <img src="q01-300x44.jpg" alt="Imagen">
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg4" value="a" onclick="compruebaValor(4,false)">a
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg4" value="b" onclick="compruebaValor(4,true)">b
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg4" value="c" onclick="compruebaValor(4,false)">c
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg4" value="d" onclick="compruebaValor(4,false)">d
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_5">
+            <p>Pregunta 5: Si tienes dos monedas y Maria tiene cuatro monedas mas
+                que vos ¿Cuantas monedas tienen en total?
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg5" value="a" onclick="compruebaValor(5,false)">4
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg5" value="b" onclick="compruebaValor(5,true)">6
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg5" value="c" onclick="compruebaValor(5,false)">8
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg5" value="d" onclick="compruebaValor(5,false)">10
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_6">
+            <p>Pregunta 6: 66 es a 33 como DD es a ...
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg6" value="a" onclick="compruebaValor(6,false)">AA
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg6" value="b" onclick="compruebaValor(6,true)">BB
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg6" value="c" onclick="compruebaValor(6,false)">CC
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg6" value="d" onclick="compruebaValor(6,false)">DD
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_7">
+            <p>Pregunta 7: Nemo es a Omen como Rama es a ...
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg7" value="a" onclick="compruebaValor(7,false)">Asar
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg7" value="b" onclick="compruebaValor(7,true)">Amar
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg7" value="c" onclick="compruebaValor(7,false)">Arma
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg7" value="d" onclick="compruebaValor(7,false)">Hoja
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_8">
+            <p>Pregunta 8: 1, 4, 9, 16, 25...
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg8" value="a" onclick="compruebaValor(8,false)">31
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg8" value="b" onclick="compruebaValor(8,false)">32
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg8" value="c" onclick="compruebaValor(8,false)">35
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg8" value="d" onclick="compruebaValor(8,true)">36
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_9">
+            <p>Pregunta 9:</p>
+            <img src="q02-300x44.jpg" alt="Imagen">
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg9" value="a" onclick="compruebaValor(9,false)">a
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg9" value="b" onclick="compruebaValor(9,false)">b
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg9" value="c" onclick="compruebaValor(9,false)">c
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg9" value="d" onclick="compruebaValor(9,true)">d
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_10">
+            <p>Pregunta 10: 6 + 2 = 26 como 3 + 7 = es igual a ...  
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg10" value="a" onclick="compruebaValor(10,false)">17
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg10" value="b" onclick="compruebaValor(10,false)">39
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg10" value="c" onclick="compruebaValor(10,true)">73
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg10" value="d" onclick="compruebaValor(10,false)">79
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_11">
+            <p>Pregunta 11: Cuchara es a comida como Hacha es a ...
+            </p>
+            <ul>
+                <li class=" ">
+                    <input type="radio" name="Preg11" value="a" onclick="compruebaValor(11,false)">Piedra
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg11" value="b" onclick="compruebaValor(11,true)">Madera
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg11" value="c" onclick="compruebaValor(11,false)">Diamante
+                </li>
+                <li class=" ">
+                    <input type="radio" name="Preg11" value="d" onclick="compruebaValor(11,false)">Hombre
+                </li>
+            </ul>
+        </div>
+        <div class="Preg none"  id="preg_12">
+            <p>Resultados:</p>
+            <ul>
+                <li id="res_1">La pregunta 1  no esta definida</li>
+                <li id="res_2">La pregunta 2 no esta definida</li>
+                <li id="res_3">La pregunta 3 no esta definida</li>
+                <li id="res_4">La pregunta 4 no esta definida</li>
+                <li id="res_5">La pregunta 5 no esta definida</li>
+                <li id="res_6">La pregunta 6 no esta definida</li>
+                <li id="res_7">La pregunta 7 no esta definida</li>
+                <li id="res_8">La pregunta 8 no esta definida</li>
+                <li id="res_9">La pregunta 9 no esta definida</li>
+                <li id="res_10">La pregunta 10 no esta definida</li>
+                <li id="res_11">La pregunta 11 no esta definida</li>
+            </ul>
+        </div>
+    </div>
+    <script src="IQ_test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+    <style>
+        #lienzo {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo" width="200" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById("lienzo");
+        const ctx = canvas.getContext("2d");
+        const direccion = '../img/animacion/luchador/';
+        const frames = ['Frame0.png', 'Frame1.png', 'Frame2.png', 'Frame3.png', 'Frame4.png', 'Frame5.png', 'Frame6.png'];
+        let currentIndex = 0;
+
+        function mostrarSiguienteFrame() {
+            if (currentIndex < frames.length) {
+                var img = new Image();
+                img.onload = function () {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 50, 50);
+                    currentIndex++;
+                    if (currentIndex >= frames.length) {
+                        currentIndex = 0;
+                    }
+                    setTimeout(mostrarSiguienteFrame, 100);
+                };
+                img.src = direccion + frames[currentIndex];
+            }
+        }
+        mostrarSiguienteFrame(); 
+    </script>
+</body>
+
+</html>

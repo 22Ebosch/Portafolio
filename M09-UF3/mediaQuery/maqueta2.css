@@ -1,0 +1,257 @@
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: space-around;
+        background-color: white;
+        color: black;
+    }
+
+    .separador {
+        background-color: blue;
+        height: 50px;
+        margin-bottom: 0.5%;
+    }
+
+    .cabecera {
+        height: 200px;
+    }
+
+    .cabecera img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .imgArt {
+        display: none;
+    }
+
+    .articulos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    header {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width:769px){
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: space-around;
+        background-color: white;
+        color: black;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: rgb(93, 129, 139);
+    }
+
+    header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+        display: none;
+    }
+
+    .buscador {
+        flex-grow: 1;
+        margin: 0 20px;
+        background-color: white;
+        height: 40px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .separador {
+        background-color: rgb(17, 70, 108);
+        height: 50px;
+        margin-bottom: 0.5%;
+    }
+
+    .cabecera {
+        height: 200px;
+    }
+
+    .cabecera img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .articulos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 2%;
+    }
+
+    .articulo {
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .articulo img {
+        width: 90%;
+        height: 180px;
+        margin-right: 2%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: space-around;
+        background-color: white;
+        color: black;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: rgb(93, 129, 139);
+    }
+
+    header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .buscador {
+        flex-grow: 1;
+        margin: 0 20px;
+        background-color: white;
+        height: 40px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .separador {
+        background-color: rgb(17, 70, 108);
+        height: 50px;
+        margin-bottom: 0.5%;
+    }
+
+    .cabecera {
+        height: 200px;
+    }
+
+    .cabecera img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .articulos {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 2%;
+    }
+
+    .articulo {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+    }
+
+    .articulo img {
+        width: 90%;
+        height: 180px;
+        margin-right: 2%;
+        object-fit: cover;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}

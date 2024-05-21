@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        form {
+            width: 100%;
+            min-width: 600px;
+            height: 100%;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        .fila {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .columna {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .DNI {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .dni-numero {
+            width: 100px;
+        }
+
+        .dni-letra {
+            width: 20px;
+        }
+
+        .largo {
+            width: 250px;
+        }
+
+        .sexo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .fieldset {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #descripcion {
+            width: 300px;
+            height: 75px;
+        }
+
+        .rojo {
+            background-color: rgb(254, 158, 158);
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <hr>
+            <h1>Datos personales</h1>
+            <div class="fila">
+                <div class="columna">
+                    <div class="DNI">
+                        <div>
+                            <label for="dni-numero">DNI:</label>
+                            <input type="number" id="dni-numero" class="dni-numero" required>
+                            <input type="text" id="dni-letra" class="dni-letra" required maxlength="1">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellido">Apellidos:</label>
+                        <input type="text" id="apellido" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div class="sexo">
+                    <label>Sexo:</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="hombre" name="sexo" value="hombre">
+                            <label for="hombre">Hombre</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="mujer" name="sexo" value="mujer">
+                            <label for="mujer">Mujer</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h1>Dirección</h1>
+            <div class="columna">
+                <div>
+                    <label for="calle">Calle/Avda:</label>
+                    <input class="largo" type="text" id="calle">
+                </div>
+                <div>
+                    <label for="poblacion">Población:</label>
+                    <input type="text" id="poblacion" name="poblacion">
+                    <label for="provincia">Provincia:</label>
+                    <select id="provincia" name="provincia" disabled>
+                        <option value=""></option>
+                        <option value="alava">Álava</option>
+                        <option value="albacete">Albacete</option>
+                        <option value="alicante">Alicante</option>
+                        <option value="almeria">Almería</option>
+                        <option value="asturias">Asturias</option>
+                        <option value="avila">Ávila</option>
+                        <option value="badajoz">Badajoz</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="burgos">Burgos</option>
+                        <option value="caceres">Cáceres</option>
+                        <option value="cadiz">Cádiz</option>
+                        <option value="cantabria">Cantabria</option>
+                        <option value="castellon">Castellón</option>
+                        <option value="ciudadreal">Ciudad Real</option>
+                        <option value="cordoba">Córdoba</option>
+                        <option value="cuenca">Cuenca</option>
+                        <option value="gerona">Gerona</option>
+                        <option value="granada">Granada</option>
+                        <option value="guadalajara">Guadalajara</option>
+                        <option value="guipuzcoa">Guipúzcoa</option>
+                        <option value="huelva">Huelva</option>
+                        <option value="huesca">Huesca</option>
+                        <option value="islasbaleares">Islas Baleares</option>
+                        <option value="jaen">Jaén</option>
+                        <option value="larioja">La Rioja</option>
+                        <option value="laspalmas">Las Palmas</option>
+                        <option value="leon">León</option>
+                        <option value="lerida">Lérida</option>
+                        <option value="lugo">Lugo</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="malaga">Málaga</option>
+                        <option value="murcia">Murcia</option>
+                        <option value="navarra">Navarra</option>
+                        <option value="ourense">Ourense</option>
+                        <option value="palencia">Palencia</option>
+                        <option value="pontevedra">Pontevedra</option>
+                        <option value="salamanca">Salamanca</option>
+                        <option value="segovia">Segovia</option>
+                        <option value="sevilla">Sevilla</option>
+                        <option value="soria">Soria</option>
+                        <option value="tarragona">Tarragona</option>
+                        <option value="santacruztenerife">Santa Cruz de Tenerife</option>
+                        <option value="teruel">Teruel</option>
+                        <option value="toledo">Toledo</option>
+                        <option value="valencia">Valencia</option>
+                        <option value="valladolid">Valladolid</option>
+                        <option value="vizcaya">Vizcaya</option>
+                        <option value="zamora">Zamora</option>
+                        <option value="zaragoza">Zaragoza</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+            <h1>Practicas grupo</h1>
+            <div>
+                <label for="archivo">Archivo:</label>
+                <input type="file" id="archivo">
+            </div>
+            <div>
+                <label for="archivoComprimido">Archivo comprimido:</label>
+                <input type="checkbox" id="archivoComprimido" name="encr/comp" disabled>
+                <label for="archivoComprimido">Archivo Encriptado:</label>
+                <input type="checkbox" id="archivoEncriptado" name="encr/comp" disabled>
+            </div>
+            <div>
+                <label for="descripcion">Descripción de la práctica:</label>
+                <br>
+                <textarea id="descripcion" required disabled></textarea>
+            </div>
+
+            <button id="enviar" type="submit" disabled>Enviar</button>
+            <div class="none" id="errDNI"></div>
+            <div class="none" id="errNom"></div>
+            <div class="none" id="errApell"></div>
+            <div class="none" id="errMail"></div>
+            <div class="none" id="errCalle"></div>
+            <div class="none" id="errPobla"></div>
+            <div class="none" id="errProv"></div>
+            <div class="none" id="errArchivo"></div>
+            <div class="none" id="errDesc"></div>
+        </form>
+    </div>
+    <script>
+        //VARIABLES
+        const numDNI = document.getElementById("dni-numero");
+        const letraDNI = document.getElementById("dni-letra");
+        const nom = document.getElementById("nombre");
+        const apellido = document.getElementById("apellido");
+        const calle = document.getElementById("calle");
+        const poblacion = document.getElementById("poblacion");
+        const provincia = document.getElementById("provincia");
+        const archivo = document.getElementById("archivo");
+        const checks = document.getElementsByName("encr/comp");
+        const desc = document.getElementById("descripcion");
+        const mail = document.getElementById("email");
+        const enviar = document.getElementById("enviar");
+        //FUNCIONES
+        function comprovarDNI() {
+            var dni = numDNI.value;
+            var letraDNI = document.getElementById("dni-letra");
+            var tabla = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+            modulo = dni % 23;
+            letra = tabla[modulo];
+            letraDNI.value = letra;
+            if (dni.length != 8) {
+                alert("El dni no tiene 8 numeros");
+                letraDNI.value = "";
+            }
+        }
+
+        function activarProvincia() {
+            if (calle.value != "" && poblacion.value != "") {
+                provincia.removeAttribute('disabled');
+            } else {
+                // Atributo i valor
+                provincia.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        function archivos() {
+            if (archivo.value != "") {
+                for (let i = 0; i < checks.length; i++) {
+                    checks[i].removeAttribute('disabled');
+                }
+            } else {
+                for (let i = 0; i < checks.length; i++) {
+                    checks[i].setAttribute('disabled', 'disabled');
+                }
+
+            }
+        }
+        function descripcion() {
+            if (archivo.value != "") {
+                desc.removeAttribute('disabled');
+            } else {
+                desc.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        function limita() {
+            let maximoCaracteres = 50;
+            if (desc.value.length >= maximoCaracteres) {
+                desc.value = desc.value.substring(0, maximoCaracteres);
+            }
+            else {
+                desc.removeAttribute('disabled');
+            }
+        }
+
+        function mayus() {
+            nom.value = nom.value.toUpperCase();
+            apellido.value = apellido.value.toUpperCase();
+        }
+
+        function barcelo() {
+            for (var i = 0; i < provincia.options.length; i++) {
+                if (provincia.options[i].value === 'barcelona') {
+                    provincia.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        function campoVacio() {
+            const arr = ["descripcion", "provincia",
+                "poblacion", "calle", "apellido", "nombre", "dni-numero", "email"];
+            for (let i = 0; i < arr.length; i++) {
+                let id = document.getElementById(arr[i]);
+                if (id.value === "") {
+                    id.classList.add("rojo");
+                } else {
+                    id.classList.remove("rojo");
+                }
+            }
+        }
+
+        function soloLetras() {
+            nom.value = nom.value.replace(/[^a-zA-Z]/g, '');
+            apellido.value = apellido.value.replace(/[^a-zA-Z]/g, '');
+        }
+
+        function error() {
+            let cont = 0;
+            if (numDNI.value == "") {
+                let errDNI = document.getElementById("errDNI")
+                errDNI.classList.remove("none");
+                errDNI.innerHTML = "Campo DNI vacio";
+                cont++;
+            } else {
+                errDNI.classList.add('none');
+            }
+            if (nom.value == "") {
+                let errNom = document.getElementById("errNom")
+                errNom.innerHTML = "Campo nombre vacio";
+                errNom.classList.remove("none");
+                cont++;
+            } else {
+                errNom.classList.add("none");
+            }
+            if (apellido.value == "") {
+                let errApell = document.getElementById("errApell")
+                errApell.innerHTML = "Campo apellido vacio";
+                errApell.classList.remove("none");
+                cont++;
+            } else {
+                errApell.classList.add("none");
+            }
+            if (mail.value == "") {
+                let errMail = document.getElementById("errMail")
+                errMail.innerHTML = "Campo Mail vacio";
+                errMail.classList.remove("none");
+                cont++;
+            } else {
+                errMail.classList.add("none");
+            }
+            if (calle.value == "") {
+                let errCalle = document.getElementById("errCalle")
+                errCalle.innerHTML = "Campo Mail vacio";
+                errCalle.classList.remove("none");
+                cont++;
+            } else {
+                errCalle.classList.add("none");
+            }
+            if (poblacion.value == "") {
+                let errPobla = document.getElementById("errPobla")
+                errPobla.innerHTML = "Campo calle vacio";
+                errPobla.classList.remove("none");
+                cont++;
+            } else {
+                errPobla.classList.add("none");
+            }
+            if (provincia.value == "") {
+                let errProv = document.getElementById("errProv")
+                errProv.innerHTML = "Campo Provincia vacio";
+                errProv.classList.remove("none");
+                cont++;
+            } else {
+                errProv.classList.add("none");
+            }
+            if (archivo.value == "") {
+                let errArchivo = document.getElementById("errArchivo")
+                errArchivo.innerHTML = "Campo Archivo vacio";
+                errArchivo.classList.remove("none");
+                cont++;
+            } else {
+                errArchivo.classList.add("none");
+            }
+            if (desc.value == "") {
+                let errDesc = document.getElementById("errDesc")
+                errDesc.innerHTML = "Campo descripcion vacio";
+                errDesc.classList.remove("none");
+                cont++;
+            } else {
+                errDesc.classList.add("none");
+            }
+            if (cont == 0) {
+                enviar.removeAttribute("disabled");
+            } else {
+                enviar.setAttribute("disabled", "disabled");
+            }
+        }
+        //EVENTOS
+        numDNI.addEventListener('focusout', comprovarDNI);
+        //se ejecuta cada vez que se escribe
+        calle.addEventListener('input', activarProvincia);
+        poblacion.addEventListener('input', activarProvincia);
+        archivo.addEventListener('input', function () {
+            archivos();
+            descripcion();
+        });
+        nom.addEventListener('input', function () {
+            mayus();
+            soloLetras();
+        });
+        apellido.addEventListener('input', function () {
+            mayus();
+            soloLetras();
+        });
+        desc.addEventListener('input', limita);
+        provincia.addEventListener('focus', barcelo);
+        document.addEventListener('DOMContentLoaded', campoVacio);
+        document.addEventListener('input', function () {
+            campoVacio();
+            error();
+        });
+
+        //nom.addEventListener('input', mayus);
+        //apellido.addEventListener('input', mayus);
+        //nom.addEventListener('input', soloLetras);
+        //apellido.addEventListener('input', campoVacio);
+
+
+    </script>
+</body>
+
+
+</script>
+
+</html>

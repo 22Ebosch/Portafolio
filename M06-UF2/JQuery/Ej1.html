@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ1-JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">    </script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            display: none;
+            color: #555;
+            font-size: 14px;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blue {
+            background-color: #3498db;
+        }
+
+        .green {
+            background-color: #2ecc71;
+        }
+
+        .orange {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="https://quickdraw.withgoogle.com/">
+            <button>Boton 1</button>
+        </a>
+        <p class="blue">Este boton te hace creativo</p>
+    </div>
+    <div>
+        <a
+            href="https://www.behindthename.com/random/random.php?gender=m&number=3&sets=5&surname=&randomsurname=yes&showextra=yes&norare=yes&nodiminutives=yes&usage_cat=1&usage_jap=1">
+            <button>Boton 2</button>
+        </a>
+        <p class="green">Este boton crea nombres random</p>
+    </div>
+    <div>
+        <a href="https://www.caffeineinformer.com/death-by-caffeine">
+            <button>Boton 3</button>
+        </a>
+        <p class="orange">¿Cuanta cafeina puedes tomar?</p>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('p').hide();
+
+            $('a').mouseenter(function () {
+                $(this).siblings('p').fadeIn(500); 
+            });
+
+            $('a').mouseleave(function () {
+                $(this).siblings('p').fadeOut(500); 
+            });
+        });
+    </script>
+
+</body>
+
+</html>

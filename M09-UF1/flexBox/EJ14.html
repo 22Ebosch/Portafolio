@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJ 14</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif
+        }
+        /* body{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+        header {
+            background-color: rgb(204, 204, 204);
+            padding: 10px;
+        }
+
+        .aficiones {
+            display: flex;
+        }
+
+        .misAficiones {
+            text-align: end;
+        }
+
+        .aficionesGrande {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .aficionesGrande div{
+            width: 30%;
+        }
+
+        .aficion {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 10px;
+        }
+        .sombra{
+            box-shadow:
+                0 1px 1px 1px rgba(140, 140, 140, 0.5),
+                /* Sombra superior */
+                0 1px 1px 1px  rgba(140, 140, 140, 0.5),
+                /* Sombra inferior */
+                1px 0 1px 1px  rgba(140, 140, 140, 0.5),
+                /* Sombra derecha */
+                1px 0 1px 1px  rgba(140, 140, 140, 0.5);
+            /* Sombra izquierda */
+        }
+
+        .aficion h2 {
+            text-align: center;
+        }
+
+        .azul {
+            background-color: rgb(84, 209, 241);
+        }
+
+        .naranja {
+            background-color: rgb(242, 202, 133);
+        }
+
+        .rojo {
+            background-color: rgb(248, 154, 126);
+        }
+
+        .gris {
+            background-color: rgb(166, 166, 166);
+            color: white;
+            text-align: center;
+        }
+        .blanco{
+            background-color: rgb(238, 238, 238);
+            color: black;
+            text-align: start;
+        }
+
+        .radios {
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .miniImagenes {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .miniImagen {
+            width: 30px;
+            height: 30px;
+            align-self: center;
+        }
+        .imagen{
+            width: 160px;
+            height: 140px;
+            align-self: center;
+            margin: 20px;
+        }
+
+        footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+        }
+        .txtOtras{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pagina personal de <a style="color: rgb(92, 0, 255);">Mar Prados Espigares</a></h1>
+    </header>
+    <h2 class="misAficiones">Mis Aficiones</h2>
+    <div class="aficionesGrande">
+        <div class="aficion azul radios sombra">
+            <h2>Diseño Web</h2>
+            <p>
+                Me encanta el diseño web. He tocado un poco
+                de css3. htm15 y algo de javascript. Cada día
+                pretendo aumentar un gnquito más mis
+                conocimientos, que luego comparto con mis
+                alumnos.
+            </p>
+            <a>&lt; Siempre Aprendiendo &gt;</a>
+            <div class="miniImagenes">
+                <img class="miniImagen" src="../../Imagenes/css-3.png" />
+                <img class="miniImagen" src="../../Imagenes/html.png" />
+                <img class="miniImagen" src="../../Imagenes/js.png" />
+            </div>
+        </div>
+        <div class="aficion naranja radios sombra">
+            <h2>Montaña</h2>
+            <p>
+                Me encanta salir a hacer rutas por la sierra. Es
+                maravilloso estar rodeada de ártnles. aire
+                fresco y naturaleza. Sentir esa sensación de
+                euforia y libertad cuando llegas a la cima...
+            </p>
+            <a>Próximo objetivo... el Mulhacén.</a>
+            <div class="miniImagenes">
+                <img class="miniImagen" src="../../Imagenes/montanas.png" />
+            </div>
+        </div>
+        <div class="aficion rojo radios sombra">
+            <h2>Animales</h2>
+            <p>
+                Cuido, junto con mi hija de una mascota
+                llamada Sara. Es una conejita blanca y regra.
+                La cepillamos, le damos su comida, la llevamos
+                al veterinario...y de vez en cuando la llevamos
+                al parque donde corretea a sus anchas.
+            </p>
+            <div class="miniImagenes">
+                <img class="miniImagen" src="../../Imagenes/conejo.png" />
+            </div>
+        </div>
+    </div>
+    <div class="aficion radios gris sombra">
+        <h3>Otras aficiones</h3>
+        <div class="aficion radios blanco sombra">
+            <div class="txtOtras">
+                Otra de mis grandes aficiones, iii Las series No puedo evitarlo, cada vez me engancho a más series. Aunque algunas con el tiemgn me van
+                aburriendo. Comparto esta afición con mi marido, que es un verdadero fanático.
+            </div>
+            <img class="imagen" src="../../Imagenes/goku-super-saiyan-blue-de-dragon-ball-super_3802x2138_xtrafondos.com.jpg" />
+        </div>
+    </div>
+    <footer>
+        Algunas de las imagenes son cortesia de iconos made by <a style="color: blue;">www.nidea.com</a>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ejercicio 13 - DOM b�sico y atributos XHTML</title>
+
+	<script type="text/javascript">
+
+		const nuevo = ["Integer consequat lacus vitae efficitur pharetra.",
+			"Fusce pretium nibh luctus tempus iaculis.",
+			"Quisque non massa eu dui gravida venenatis nec vel felis.",
+			"Proin sed nisl ut tellus tincidunt rhoncus.",
+			"In scelerisque urna a eros pharetra varius."]
+			
+		function anade() {
+			const lista = document.getElementById("lista");
+			const random = Math.floor(Math.random() * nuevo.length);
+			const nuevoElemento = document.createElement("li");
+			let fraseRandom = nuevo[random];
+			nuevoElemento.innerHTML = fraseRandom;
+			lista.appendChild(nuevoElemento);
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<ul id="lista">
+		<li>Lorem ipsum dolor sit amet</li>
+		<li>Consectetuer adipiscing elit</li>
+		<li>Sed mattis enim vitae orci</li>
+		<li>Phasellus libero</li>
+		<li>Maecenas nisl arcu</li>
+	</ul>
+
+	<input value="Añadir elemento" onclick="anade();" type="button">
+
+
+
+</body>
+
+</html>

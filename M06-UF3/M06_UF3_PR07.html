@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="texto" oninput="limita(100);"></textarea>
+    <p id="restantes"></p>
+
+    <script>
+        function limita(maximoCaracteres) {
+            var rest = document.getElementById("restantes");
+            var elemento = document.getElementById("texto");
+            var letras = elemento.value.length;
+            var restantes = maximoCaracteres - letras;
+            
+            if (letras >= maximoCaracteres) {
+                rest.innerHTML = "Has alcanzado el límite de caracteres.";
+                elemento.value = elemento.value.substring(0, maximoCaracteres);
+            } else {
+                rest.innerHTML = "Faltan: " + restantes + " caracteres por escribir";
+            }
+        }
+    </script>
+</body>
+
+</html>

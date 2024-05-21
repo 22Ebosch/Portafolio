@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion</title>
+    <style>
+        #lienzo {
+            border: 2px solid rgb(20, 235, 9);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="lienzo" width="500" height="500"></canvas>
+    <div>
+        Llevas: <span id="contador">0</span> movimientos
+    </div>
+    <script>
+        const canvas = document.getElementById("lienzo");
+        const ctx = canvas.getContext("2d");
+        const direccion = '../img/animacion/puzzle/';
+        const frames = ['fila-1-columna-1.jpg', 'fila-1-columna-2.jpg', 'fila-1-columna-3.jpg', 'fila-1-columna-4.jpg', 'fila-1-columna-5.jpg',
+            'fila-2-columna-1.jpg', 'fila-2-columna-2.jpg', 'fila-2-columna-3.jpg', 'fila-2-columna-4.jpg', 'fila-2-columna-5.jpg',
+            'fila-3-columna-1.jpg', 'fila-3-columna-2.jpg', 'fila-3-columna-3.jpg', 'fila-3-columna-4.jpg', 'fila-3-columna-5.jpg',
+            'fila-4-columna-1.jpg', 'fila-4-columna-2.jpg', 'fila-4-columna-3.jpg', 'fila-4-columna-4.jpg', 'fila-4-columna-5.jpg',
+            'fila-5-columna-1.jpg', 'fila-5-columna-2.jpg', 'fila-5-columna-3.jpg', 'fila-5-columna-4.jpg', 'fila-5-columna-5.jpg',
+        ];
+        let movimiento = 0;
+        let primerIndiceClickeado = null;
+        const frames2 = [...frames];
+        frames.sort(() => Math.random() - 0.5);
+        // Calculamos las dimensiones de cada celda y la separación
+        const numFilas = 5;
+        const numColumnas = 5;
+        const anchoCelda = (canvas.width - 2) / numColumnas; // Restamos 2 para la separación
+        const altoCelda = (canvas.height - 2) / numFilas; // Restamos 2 para la separación
+        const contador = document.getElementById('contador');
+        // Cargamos las imágenes en cada celda con la separación
+        frames.forEach((imagen, index) => {
+            const fila = Math.floor(index / numColumnas);
+            const columna = index % numColumnas;
+            const imgElement = new Image();
+            imgElement.src = direccion + imagen;
+            imgElement.onload = () => {
+                const x = columna * (anchoCelda + 2); // Agregamos 2 para la separación
+                const y = fila * (altoCelda + 2); // Agregamos 2 para la separación
+                ctx.drawImage(imgElement, x, y, anchoCelda, altoCelda);
+            };
+        });
+
+        function arraysIguales(arr1, arr2) {
+            if (arr1.length !== arr2.length) return false;
+            for (let i = 0; i < arr1.length; i++) {
+                if (arr1[i] !== arr2[i]) return false;
+            }
+            return true;
+        }
+        canvas.addEventListener('click', function (event) {
+            if (arraysIguales(frames, frames2)) {
+                alert("¡Felicidades! Has completado el juego.");
+                canvas.removeEventListener('click', this);
+            } else {
+
+                const rect = canvas.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const columnaClickeada = Math.floor(x / (anchoCelda + 1));
+                const filaClickeada = Math.floor(y / (altoCelda + 1));
+                const index = filaClickeada * numColumnas + columnaClickeada;
+
+                if (primerIndiceClickeado === null) {
+                    primerIndiceClickeado = index; // Guardamos el primer índice clickeado
+                } else {
+                    // Intercambiamos las imágenes en los índices clickeados
+                    [frames[primerIndiceClickeado], frames[index]] = [frames[index], frames[primerIndiceClickeado]];
+                    primerIndiceClickeado = null; // Reseteamos para el próximo par de clics
+
+                    // Limpiamos y redibujamos
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    frames.forEach((imagen, index) => {
+                        const fila = Math.floor(index / numColumnas);
+                        const columna = index % numColumnas;
+                        const imgElement = new Image();
+                        imgElement.src = direccion + imagen;
+                        imgElement.onload = () => {
+                            const x = columna * (anchoCelda + 2); // 2 px de separacion
+                            const y = fila * (altoCelda + 2); // 2 px de separacion
+                            ctx.drawImage(imgElement, x, y, anchoCelda, altoCelda);
+                        };
+                    });
+                    movimiento++
+                    contador.innerHTML = movimiento;
+                    console.log("Sigue intentando, aún no está en el orden correcto.");
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

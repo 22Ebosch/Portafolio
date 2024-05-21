@@ -1,0 +1,93 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ejercicio 14 - DOM b�sico y atributos XHTML</title>
+    <style>
+        .none {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+        consequat congue, commodo nec, commodo ultricies, turpis. Quisque
+        sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque
+        massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam
+        sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+        semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu
+        adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam
+        non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Duis scelerisque.</p>
+    <a id="enlace_1" href="#">Ocultar contenidos</a>
+
+    <br>
+
+    <p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+        consequat congue, commodo nec, commodo ultricies, turpis. Quisque
+        sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque
+        massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam
+        sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+        semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu
+        adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam
+        non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Duis scelerisque.</p>
+    <a id="enlace_2" href="#">Ocultar contenidos</a>
+
+    <br>
+
+    <p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+        consequat congue, commodo nec, commodo ultricies, turpis. Quisque
+        sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque
+        massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam
+        sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+        semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu
+        adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam
+        non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Duis scelerisque.</p>
+    <a id="enlace_3" href="#">Ocultar contenidos</a>
+
+</body>
+<script type="text/javascript">
+    function muestraOculta(id, id2) {
+        const parrafo = document.getElementById(id);
+        const clase = parrafo.classList;
+        const mostrar = document.getElementById(id2)
+
+        if (clase.contains("none")) {
+            clase.remove("none");
+            mostrar.innerHTML = 'Ocultar Contenido'
+        } else {
+            clase.add("none")
+            mostrar.innerHTML = 'Mostrar Contenido'
+        }
+    }
+
+    const enlace1 = document.getElementById('enlace_1');
+    enlace1.addEventListener('click', function () {
+        muestraOculta('contenidos_1', this.id);
+    });
+
+    const enlace2 = document.getElementById('enlace_2');
+    enlace2.addEventListener('click', function () {
+        muestraOculta('contenidos_2', this.id);
+    });
+
+    const enlace3 = document.getElementById('enlace_3');
+    enlace3.addEventListener('click', function () {
+        muestraOculta('contenidos_3', this.id);
+    });
+
+    
+
+</script>
+
+</html>

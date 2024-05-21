@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* ESTO VA JUNTO CON EL GRID-TEMPLATE-AREA */
+.cel1 { grid-area: header; }
+.cel2 { grid-area: menu; }
+.cel3 { grid-area: main; }
+.cel4 { grid-area: right; }
+.cel5 { grid-area: footer; }
+.cel6 { grid-area: footer2; }
+
+/* 
+ESTO PUEDE IR SOLO 
+orden: inicio fila, inicio columna, final fila, final columna
+.cel1 { grid-area: 1 / 1 / 2 / 6;}
+.cel2 { grid-area: 2 / 1 / 4 / 2;}
+.cel3 { grid-area: 2 / 2 / 3 / 4;}
+.cel4 { grid-area: 2 / 4 / 3 / 6; }
+.cel5 { grid-area: 3 / 2 / 4 / 4;}
+.cel6 { grid-area: 3 / 4 / 4 / 6; } */
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header '
+    'menu main main  right right'
+    'menu footer footer footer2 footer2';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="cel1">Cel 1</div>
+  <div class="cel2">Cel 2</div>
+  <div class="cel3">Cel 3</div>  
+  <div class="cel4">Cel 4</div>
+  <div class="cel5">Cel 5</div>
+  <div class="cel6">Cel 6</div>
+</div>
+
+</body>
+</html>
+
+
